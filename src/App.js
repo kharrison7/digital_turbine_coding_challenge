@@ -37,8 +37,6 @@ class App extends Component {
     const proxyurl = "https://boiling-castle-73930.herokuapp.com/";
     let urlSearch = `${proxyurl}` + url + addToEnd;
     // let urlSearch = url + addToEnd;
-    console.log(value);
-    console.log(urlSearch);
 
     // This makes the GET request.
     request
@@ -48,7 +46,7 @@ class App extends Component {
                 console.log("failed to GET");
                 console.log(err);
               } else {
-                console.log(res.body);
+                // console.log(res.body);
                 this.setState({json: res.body, url: urlSearch}, () => {
                 });
               }
@@ -60,9 +58,46 @@ class App extends Component {
     let url = this.state.url;
     console.log(json);
     console.log(url);
+    let filteredCampaigns = json.filteredCampaigns;
+    console.log(filteredCampaigns);
     return (
       <div className="App container-fluid">
-        <h1>Here is some text</h1>
+        <h1>Here is a table</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+            <th>Age</th>
+            </tr>
+            <tr>
+              <td>Jill</td>
+              <td>Smith</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Eve</td>
+              <td>Jackson</td>
+              <td>94</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div className="card comments col-md-5">
+          {this.props.token ? (
+            <div>
+              {filteredCampaigns.map( (term) => {
+              // key={term[1]}
+                return
+                  <div>
+                    <p>{term.campaignId}</p>
+                  </div>
+              })}
+            </div>
+          ): "Loading Table Data"}
+
+
+        </div>
       </div>
     )
   }
