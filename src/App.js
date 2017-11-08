@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import request from 'superagent';
 import './App.css';
 
 
@@ -8,9 +9,8 @@ class App extends Component {
 
     this.state = {
       example: '',
+      json: {},
     };
-
-
   }
 
   handleCommentTextChange(event){
@@ -26,16 +26,29 @@ class App extends Component {
   }
 
   componentWillMount() {
-    fetch('https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo')
+    fetch('http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814')
     .then(r => r.json() )
     .then((json) => {
       console.log("Data from componentWillMount fetch", json)
-      this.setState({nasa: json})
+      this.setState({json: json})
     })
+
+    // This makes the GET request.
+    request
+          .get(`http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814`)
+          .end((err, res) => {
+              if (err) {
+                console.log("failed to GET");
+              } else {
+                this.setState({json: res.body}, () => {
+                });
+              }
+          })
   }
 
   render() {
-    let nasa = this.state.nasa;
+    let json = this.state.json;
+    console.log(json);
     return (
       <div className="App container-fluid">
         <h1>Here is some text</h1>
