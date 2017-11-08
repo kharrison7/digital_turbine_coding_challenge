@@ -29,9 +29,9 @@ class App extends Component {
     let value = Math.floor((Math.random() * 10) + 1);
     let addToEnd = '&sessionId=' + value;
     // The following code is optional to avoid CORS.
-    // const proxyurl = "https://boiling-castle-73930.herokuapp.com/";
-    // let urlSearch = `${proxyurl}` + url + addToEnd;
-    let urlSearch = url + addToEnd;
+    const proxyurl = "https://boiling-castle-73930.herokuapp.com/";
+    let urlSearch = `${proxyurl}` + url + addToEnd;
+    // let urlSearch = url + addToEnd;
     console.log(value);
     console.log(urlSearch);
 
