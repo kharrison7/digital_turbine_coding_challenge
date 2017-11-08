@@ -66,17 +66,17 @@ class App extends Component {
         <table>
           <tbody>
             <tr>
-              <th>Firstname</th>
-              <th>Lastname</th>
-            <th>Age</th>
+              <th>CampaignId</th>
+              <th>CampaignName</th>
+              <th>Reason/Message</th>
             </tr>
             <tr>
-              <td>Jill</td>
+              <td>1</td>
               <td>Smith</td>
               <td>50</td>
             </tr>
             <tr>
-              <td>Eve</td>
+              <td>2</td>
               <td>Jackson</td>
               <td>94</td>
             </tr>
@@ -84,20 +84,28 @@ class App extends Component {
         </table>
 
         <div className="card comments col-md-5">
-          {this.props.token ? (
+          {filteredCampaigns ? (
             <div>
-              {filteredCampaigns.map( (term) => {
-              // key={term[1]}
-                return
-                  <div>
-                    <p>{term.campaignId}</p>
-                  </div>
-              })}
+              <div>
+                <p>Data Collected:</p>
+              </div>
+              <div>
+                {filteredCampaigns.map( (term) => {
+                // key={term[1]}
+                console.log(term);
+                // console.log(term.campaignId);
+                console.log(term.campaignName);
+                  return
+                    <div>
+                      <p>{term.campaignId}</p>
+                      <p>{term.campaignName}</p>
+                    </div>
+                })}
+              </div>
             </div>
           ): "Loading Table Data"}
-
-
         </div>
+
       </div>
     )
   }
