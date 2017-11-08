@@ -79,18 +79,18 @@ class App extends Component {
                 <p>Data Collected:</p>
               </div>
 
-              <table>
-                <tbody>
+              <table className="table table-striped table-hover">
+                <thead>
                   <tr>
                     <th>CampaignId</th>
                     <th>CampaignName</th>
                     <th>Reason/Message</th>
                   </tr>
-                  {/* This maps the data onto the table: */}
+                </thead>
+                {/* This maps the data onto the table: */}
+                <tbody>
                   {filteredCampaigns.map( (term, i) => {
-                  console.log(term.failedFilters[0].message);
-                  // console.log(term.campaignId);
-                  // console.log(term.campaignName);
+                  console.log(term);
                     return(
                       <tr key={term[i]} >
                         {/* <td>{i}</td> */}
