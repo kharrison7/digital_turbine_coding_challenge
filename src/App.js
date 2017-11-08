@@ -90,16 +90,19 @@ class App extends Component {
                 <p>Data Collected:</p>
               </div>
               <div>
-                {filteredCampaigns.map( (term) => {
+                {filteredCampaigns.map( (term, i) => {
                 // key={term[1]}
                 console.log(term);
                 // console.log(term.campaignId);
-                console.log(term.campaignName);
-                  return
-                    <div>
+                // console.log(term.campaignName);
+                  return(
+                    <div key={term[i]} >
+                      <p>{i}</p>
+                      {/* <p>{term}</p> */}
                       <p>{term.campaignId}</p>
                       <p>{term.campaignName}</p>
                     </div>
+                  )
                 })}
               </div>
             </div>
