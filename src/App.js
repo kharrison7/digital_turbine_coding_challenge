@@ -62,8 +62,8 @@ class App extends Component {
     console.log(filteredCampaigns);
     return (
       <div className="App container-fluid">
-        <h1>Here is a table</h1>
-        <table>
+        <h1>Kevin Harrison - Digital Turbine Scripting Exercise Table Page</h1>
+        {/* <table>
           <tbody>
             <tr>
               <th>CampaignId</th>
@@ -81,7 +81,7 @@ class App extends Component {
               <td>94</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
 
         <div className="card comments col-md-5">
           {filteredCampaigns ? (
@@ -89,22 +89,41 @@ class App extends Component {
               <div>
                 <p>Data Collected:</p>
               </div>
-              <div>
+
+              <table>
+                <tbody>
+                  <tr>
+                    <th>CampaignId</th>
+                    <th>CampaignName</th>
+                    <th>Reason/Message</th>
+                  </tr>
+                  {/* This maps the data onto the table: */}
+                  {filteredCampaigns.map( (term, i) => {
+                  console.log(term);
+                  // console.log(term.campaignId);
+                  // console.log(term.campaignName);
+                    return(
+                      <tr key={term[i]} >
+                        {/* <td>{i}</td> */}
+                        <td>{term.campaignId}</td>
+                        <td>{term.campaignName}</td>
+                        <td>{term.campaignName}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+              {/* <div>
                 {filteredCampaigns.map( (term, i) => {
-                // key={term[1]}
-                console.log(term);
-                // console.log(term.campaignId);
-                // console.log(term.campaignName);
                   return(
                     <div key={term[i]} >
                       <p>{i}</p>
-                      {/* <p>{term}</p> */}
                       <p>{term.campaignId}</p>
                       <p>{term.campaignName}</p>
                     </div>
                   )
                 })}
-              </div>
+              </div> */}
             </div>
           ): "Loading Table Data"}
         </div>
