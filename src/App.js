@@ -88,7 +88,7 @@ class App extends Component {
                   </tr>
                   {/* This maps the data onto the table: */}
                   {filteredCampaigns.map( (term, i) => {
-                  console.log(term);
+                  console.log(term.failedFilters[0].message);
                   // console.log(term.campaignId);
                   // console.log(term.campaignName);
                     return(
@@ -96,23 +96,13 @@ class App extends Component {
                         {/* <td>{i}</td> */}
                         <td>{term.campaignId}</td>
                         <td>{term.campaignName}</td>
-                        <td>{term.campaignName}</td>
+                        <td>{term.failedFilters[0].message}</td>
                       </tr>
                     )
                   })}
                 </tbody>
               </table>
-              {/* <div>
-                {filteredCampaigns.map( (term, i) => {
-                  return(
-                    <div key={term[i]} >
-                      <p>{i}</p>
-                      <p>{term.campaignId}</p>
-                      <p>{term.campaignName}</p>
-                    </div>
-                  )
-                })}
-              </div> */}
+
             </div>
           ): "Loading Table Data"}
         </div>
