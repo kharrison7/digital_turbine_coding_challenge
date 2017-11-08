@@ -26,24 +26,32 @@ class App extends Component {
   }
 
   componentWillMount() {
-    fetch('http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814')
-    .then(r => r.json() )
-    .then((json) => {
-      console.log("Data from componentWillMount fetch", json)
-      this.setState({json: json})
-    })
+    let url = 'http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814';
+    let paramName = 'sessionid';
+    let value = 1;
+    let addToEnd = '&sessionid=1';
+    let urlSearch = url + addToEnd;
+    console.log(urlSearch);
 
     // This makes the GET request.
     request
-          .get(`http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814`)
+          .get(urlSearch)
           .end((err, res) => {
               if (err) {
                 console.log("failed to GET");
+                console.log(err);
               } else {
                 this.setState({json: res.body}, () => {
                 });
               }
           })
+
+          // fetch('http://ads.appia.com/getAdsDebug?id=3855&password=OCD8KOQI8F4MPUPXDXDE0V4EZF&key=r3c@che4t0mc@t&userAgentHeader=Android&siteId=9814')
+          // .then(r => r.json() )
+          // .then((json) => {
+          //   console.log("Data from componentWillMount fetch", json)
+          //   this.setState({json: json})
+          // })
   }
 
   render() {
