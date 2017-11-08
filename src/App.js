@@ -61,10 +61,7 @@ class App extends Component {
     let json = this.state.json;
     let url = this.state.url;
     let value = this.state.intValue;
-    console.log(json);
-    console.log(url);
     let filteredCampaigns = json.filteredCampaigns;
-    console.log(filteredCampaigns);
 
     return (
       <div className="App container-fluid">
@@ -72,14 +69,14 @@ class App extends Component {
         <p>Url Called: {url}</p>
         <h3>Random Integer Generated: {value}</h3>
 
-        <div className="card comments col-md-5">
+        <div className="center-itmes">
           {filteredCampaigns ? (
             <div>
               <div>
                 <p>Data Collected:</p>
               </div>
 
-              <table className="table table-striped table-hover">
+              <table className="table table-striped table-hover table-responsive table-bordered">
                 <thead>
                   <tr>
                     <th>CampaignId</th>
@@ -90,10 +87,9 @@ class App extends Component {
                 {/* This maps the data onto the table: */}
                 <tbody>
                   {filteredCampaigns.map( (term, i) => {
-                  console.log(term);
+                  // console.log(term);
                     return(
-                      <tr key={term[i]} >
-                        {/* <td>{i}</td> */}
+                      <tr key={i} >
                         <td>{term.campaignId}</td>
                         <td>{term.campaignName}</td>
                         <td>{term.failedFilters[0].message}</td>
