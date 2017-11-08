@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       example: '',
       url: '',
+      intValue: 0,
       json: {},
     };
   }
@@ -37,6 +38,9 @@ class App extends Component {
     const proxyurl = "https://boiling-castle-73930.herokuapp.com/";
     let urlSearch = `${proxyurl}` + url + addToEnd;
     // let urlSearch = url + addToEnd;
+    this.setState({
+      intValue: value
+    })
 
     // This makes the GET request.
     request
@@ -56,32 +60,17 @@ class App extends Component {
   render() {
     let json = this.state.json;
     let url = this.state.url;
+    let value = this.state.intValue;
     console.log(json);
     console.log(url);
     let filteredCampaigns = json.filteredCampaigns;
     console.log(filteredCampaigns);
+
     return (
       <div className="App container-fluid">
         <h1>Kevin Harrison - Digital Turbine Scripting Exercise Table Page</h1>
-        {/* <table>
-          <tbody>
-            <tr>
-              <th>CampaignId</th>
-              <th>CampaignName</th>
-              <th>Reason/Message</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Smith</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jackson</td>
-              <td>94</td>
-            </tr>
-          </tbody>
-        </table> */}
+        <p>Url Called: {url}</p>
+        <h3>Random Integer Generated: {value}</h3>
 
         <div className="card comments col-md-5">
           {filteredCampaigns ? (
