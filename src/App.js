@@ -78,7 +78,7 @@ class App extends Component {
                   // console.log(term);
                     return(
                       <tr key={i} >
-                        <td>{term.campaignId}</td>
+                        <td className="align-left">{term.campaignId}</td>
                         <td className="align-left">{term.campaignName}</td>
                         <td className="align-left">{term.failedFilters[0].message}</td>
                       </tr>
