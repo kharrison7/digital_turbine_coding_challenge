@@ -88,7 +88,7 @@ class App extends Component {
               </table>
 
             </div>
-          ): "Loading Table Data"}
+          ): "Loading Table Data - If the data fails to load, make sure that CORs is on, Ad Block is off, and that any Chrome extensions are off."}
         </div>
 
       </div>

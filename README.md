@@ -7,6 +7,9 @@ Note: Must enable CORs and disable Ad Block for this to work.
 
 - - -
 
+Deployment: https://kharrison7.github.io/digital_turbine_coding_challenge/
+
+- - -
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
