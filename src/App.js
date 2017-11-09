@@ -26,7 +26,8 @@ class App extends Component {
     let urlSearch = `${proxyurl}` + url + addToEnd;
     // let urlSearch = url + addToEnd;
     this.setState({
-      intValue: value
+      intValue: value,
+      url: urlSearch
     })
 
     // This makes the GET request.
