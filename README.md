@@ -4,6 +4,10 @@ This project was built as part of my application to Digital Turbine. The code in
 - - -
 
 Note: Must enable CORs and disable Ad Block for this to work.
+Additionally incognito mode bypasses client side rejection issues.
+For further help with troubleshooting:
+https://github.com/prebid/Prebid.js/issues/941
+https://www.techinpost.com/fixed-error-err_blocked_by_client-code-problem-instantly/
 
 - - -
 
