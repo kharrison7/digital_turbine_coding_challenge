@@ -24,10 +24,10 @@ class App extends Component {
     // The following code is optional to avoid the need for CORS.
     const proxyurl = "https://boiling-castle-73930.herokuapp.com/";
     let urlSearch = `${proxyurl}` + url + addToEnd;
-    // let urlSearch = url + addToEnd;
+    let urlValue = url + addToEnd;
     this.setState({
       intValue: value,
-      url: urlSearch
+      url: urlValue
     })
 
     // This makes the GET request.
@@ -39,7 +39,7 @@ class App extends Component {
                 console.log(err);
               } else {
                 // This sets the state to fit the response.
-                this.setState({json: res.body, url: urlSearch}, () => {
+                this.setState({json: res.body, url: urlValue}, () => {
                 });
               }
           })

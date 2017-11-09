@@ -1,9 +1,9 @@
 
-This project was built as part of my application to Digital Turbine.
+This project was built as part of my application to Digital Turbine. The code in the App.js file makes a GET request and then a table is displayed containing the response data.
 
-- - - 
+- - -
 
-Note to self: Must enable CORs and disable Ad Block for this to work.
+Note: Must enable CORs and disable Ad Block for this to work.
 
 - - -
 
